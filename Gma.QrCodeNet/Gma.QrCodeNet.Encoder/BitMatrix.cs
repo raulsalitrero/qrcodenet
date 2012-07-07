@@ -7,6 +7,7 @@ namespace Gma.QrCodeNet.Encoding
         public abstract bool this[int i, int j] { get; set; }
         public abstract int Width { get; }
         public abstract int Height { get; }
+        public abstract bool[,] InternalArray { get; }
 
         internal MatrixSize Size
         {

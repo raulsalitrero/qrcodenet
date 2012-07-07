@@ -55,12 +55,12 @@ namespace Gma.QrCodeNet.Demo
 			else
 			{
 
-                DrawingBrushRenderer dRender = new DrawingBrushRenderer(new FixedModuleSize(5, QuietZoneModules.Four));
-                BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
-                using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
-                {
-                    dRender.WriteToStream(matrix, ImageFormatEnum.PNG, stream);
-                }
+                //DrawingBrushRenderer dRender = new DrawingBrushRenderer(new FixedModuleSize(5, QuietZoneModules.Four));
+                //BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
+                //using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                //{
+                //    dRender.WriteToStream(matrix, ImageFormatEnum.PNG, stream);
+                //}
 
                 //WriteableBitmapRenderer wRender = new WriteableBitmapRenderer(new FixedModuleSize(15, QuietZoneModules.Four));
                 //BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
@@ -69,12 +69,12 @@ namespace Gma.QrCodeNet.Demo
                 //    wRender.WriteToStream(matrix, ImageFormatEnum.PNG, stream);
                 //}
 
-                //GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(15, QuietZoneModules.Four));
-                //BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
-                //using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
-                //{
-                //    gRender.WriteToStream(matrix, ImageFormat.Png, stream);
-                //}
+                GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(30, QuietZoneModules.Four));
+                BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
+                using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                {
+                    gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
+                }
 			}
            
 

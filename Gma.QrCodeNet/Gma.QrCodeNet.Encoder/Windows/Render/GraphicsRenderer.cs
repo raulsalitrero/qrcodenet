@@ -106,7 +106,7 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         /// <exception cref="ExternalException">The image was saved with the wrong image format</exception>
         /// <remarks>You should avoid saving an image to the same stream that was used to construct. Doing so might damage the stream
         /// If any additional data has been written to the stream before saving the image, the image data in the stream will be corrupted</remarks>
-        public void WriteToStream(BitMatrix QrMatrix, ImageFormat imageFormat, Stream stream)
+        public void WriteToStream(BitMatrix QrMatrix, ImageFormat imageFormat, Stream stream, Point DPI)
         {
             if (imageFormat == ImageFormat.Emf || imageFormat == ImageFormat.Wmf)
             {
@@ -119,12 +119,21 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
                 DrawingSize size = m_iSize.GetSize(QrMatrix == null ? 21 : QrMatrix.Width);
 
                 using (Bitmap bitmap = new Bitmap(size.CodeWidth, size.CodeWidth))
-                using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    this.Draw(graphics, QrMatrix);
-                    bitmap.Save(stream, imageFormat);
+                    if(DPI.X != 96 || DPI.Y != 96)
+                        bitmap.SetResolution(DPI.X, DPI.Y);
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        this.Draw(graphics, QrMatrix);
+                        bitmap.Save(stream, imageFormat);
+                    }
                 }
             }
+        }
+
+        public void WriteToStream(BitMatrix QrMatrix, ImageFormat imageFormat, Stream stream)
+        {
+            this.WriteToStream(QrMatrix, imageFormat, stream, new Point(96, 96));
         }
 
         /// <summary>

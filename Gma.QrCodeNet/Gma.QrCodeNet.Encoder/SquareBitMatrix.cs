@@ -2,22 +2,26 @@
 
 namespace Gma.QrCodeNet.Encoding
 {
-    public class TriStateMatrix : BitMatrix
+    public class SquareBitMatrix : BitMatrix
     {
-        private readonly StateMatrix m_stateMatrix;
-        
         private readonly bool[,] m_InternalArray;
 
         private readonly int m_Width;
 
-        public TriStateMatrix(int width)
+        public SquareBitMatrix(int width)
         {
-            m_stateMatrix = new StateMatrix(width);
             m_InternalArray = new bool[width, width];
             m_Width = width;
         }
 
-        public static bool CreateTriStateMatrix(bool[,] internalArray, out TriStateMatrix triStateMatrix)
+        internal SquareBitMatrix(bool[,] internalArray)
+        {
+            m_InternalArray = internalArray;
+            int width = internalArray.GetLength(0);
+            m_Width = width;
+        }
+
+        public static bool CreateSquareBitMatrix(bool[,] internalArray, out SquareBitMatrix triStateMatrix)
         {
             triStateMatrix = null;
             if (internalArray == null)
@@ -25,7 +29,7 @@ namespace Gma.QrCodeNet.Encoding
 
             if (internalArray.GetLength(0) == internalArray.GetLength(1))
             {
-                triStateMatrix = new TriStateMatrix(internalArray);
+                triStateMatrix = new SquareBitMatrix(internalArray);
                 return true;
             }
             else
@@ -35,7 +39,7 @@ namespace Gma.QrCodeNet.Encoding
         }
 
         /// <summary>
-        /// Return value will be deep copy of array. 
+        /// Return value will be internal array itself. Not deep/shallow copy. 
         /// </summary>
         public override bool[,] InternalArray
         {
@@ -49,13 +53,7 @@ namespace Gma.QrCodeNet.Encoding
             }
         }
 
-        internal TriStateMatrix(bool[,] internalArray)
-        {
-            m_InternalArray = internalArray;
-            int width = internalArray.GetLength(0);
-            m_stateMatrix = new StateMatrix(width);
-            m_Width = width;
-        }
+        
 
         public override bool this[int i, int j]
         {
@@ -65,33 +63,10 @@ namespace Gma.QrCodeNet.Encoding
             }
             set
             {
-            	if (MStatus(i, j) == MatrixStatus.None || MStatus(i, j) == MatrixStatus.NoMask)
-            	{
-            		throw new InvalidOperationException(string.Format("The value of cell [{0},{1}] is not set or is Stencil.", i, j));
-            	}
                 m_InternalArray[i, j] = value;
             }
         }
-        
-        public bool this[int i, int j, MatrixStatus mstatus]
-        {
-        	set
-        	{
-        		m_stateMatrix[i, j] = mstatus;
-        		m_InternalArray[i, j] = value;
-        	}
-        }
-
-        internal MatrixStatus MStatus(int i, int j)
-        {
-            return m_stateMatrix[i, j];
-        }
-
-        internal MatrixStatus MStatus(MatrixPoint point)
-        {
-            return MStatus(point.X, point.Y);
-        }
-        
+       
          public override int Height
         {
             get { return Width; }

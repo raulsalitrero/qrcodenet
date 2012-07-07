@@ -33,6 +33,11 @@ namespace Gma.QrCodeNet.Encoding.Positioning.Stencils
             get { return Stencil.GetLength(1); }
         }
 
+        public override bool[,] InternalArray
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         public abstract void ApplyTo(TriStateMatrix matrix);
     }
 }

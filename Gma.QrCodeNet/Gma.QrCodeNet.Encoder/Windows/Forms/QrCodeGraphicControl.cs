@@ -216,25 +216,19 @@ namespace Gma.QrCodeNet.Encoding.Windows.Forms
         { get { return m_isLocked; } }
 
         /// <summary>
-        /// Get Qr BitMatrix as two dimentional bool array.
+        /// Get Qr SquareBitMatrix as two dimentional bool array.
+        /// It will be deep copy of control's internal bitmatrix. 
         /// </summary>
         /// <returns>null if matrix is null, else full matrix</returns>
-        public BitMatrix GetQrMatrix()
+        public SquareBitMatrix GetQrMatrix()
         {
             if (m_QrCode.Matrix == null)
                 return null;
             else
             {
                 BitMatrix matrix = m_QrCode.Matrix;
-                TriStateMatrix clone = new TriStateMatrix(matrix.Width);
-                for (int x = 0; x < matrix.Width; x++)
-                {
-                    for (int y = 0; y < matrix.Width; y++)
-                    {
-                        clone[x, y, MatrixStatus.NoMask] = matrix[x, y];
-                    }
-                }
-                return clone;
+                bool[,] internalArray = matrix.InternalArray;
+                return new SquareBitMatrix(internalArray);
             }
         }
 

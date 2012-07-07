@@ -113,6 +113,7 @@
     <Compile Include="ReedSolomon\Polynomial.cs" />
     <Compile Include="ReedSolomon\ReedSolomonEncoder.cs" />
     <Compile Include="QRCodeConstantVariable.cs" />
+    <Compile Include="SquareBitMatrix.cs" />
     <Compile Include="StateMatrix.cs" />
     <Compile Include="Terminate\Terminator.cs" />
     <Compile Include="TriStateMatrix.cs" />
