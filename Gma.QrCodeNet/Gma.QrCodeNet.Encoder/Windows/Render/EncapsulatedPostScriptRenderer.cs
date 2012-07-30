@@ -40,31 +40,32 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
 		/// <param name="stream">Output stream that must be writable</param>
 		public void WriteToStream(BitMatrix matrix, Stream stream)
 		{
-			var writer = new StreamWriter(stream);
-
-			int width = matrix == null ? 21 : matrix.Width;
-
-			DrawingSize drawingSize = m_iSize.GetSize(width);
-
-			OutputHeader(drawingSize, writer);
-			OutputBackground(writer);
-
-			if (matrix != null)
+			using (var writer = new StreamWriter(stream))
 			{
-				switch (m_DrawingTechnique)
-				{
-					case EpsModuleDrawingTechnique.Squares:
-						DrawSquares(matrix, writer);
-						break;
-					case EpsModuleDrawingTechnique.Image:
-						DrawImage(matrix, writer);
-						break;
-					default:
-						throw new ArgumentOutOfRangeException("DrawingTechnique");
-				}
-			}
+				int width = matrix == null ? 21 : matrix.Width;
 
-			OutputFooter(writer);
+				DrawingSize drawingSize = m_iSize.GetSize(width);
+
+				OutputHeader(drawingSize, writer);
+				OutputBackground(writer);
+
+				if (matrix != null)
+				{
+					switch (m_DrawingTechnique)
+					{
+						case EpsModuleDrawingTechnique.Squares:
+							DrawSquares(matrix, writer);
+							break;
+						case EpsModuleDrawingTechnique.Image:
+							DrawImage(matrix, writer);
+							break;
+						default:
+							throw new ArgumentOutOfRangeException("DrawingTechnique");
+					}
+				}
+
+				OutputFooter(writer);
+			}
 		}
 
 		/// <summary>
