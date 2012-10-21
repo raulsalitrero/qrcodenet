@@ -29,7 +29,7 @@ namespace Gma.QrCodeNet.Demo
         {
         	
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = @"PNG (*.png)|*.png|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps";
+            saveFileDialog.Filter = @"PNG (*.png)|*.png|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
             saveFileDialog.FileName = Path.GetFileName(GetFileNameProposal());
             saveFileDialog.DefaultExt = "png";
 
@@ -47,13 +47,27 @@ namespace Gma.QrCodeNet.Demo
                     new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
                     new EPSFormColor(Color.Black), new EPSFormColor(Color.White));
 
-                using (var file = File.OpenWrite(saveFileDialog.FileName))
+                using (var file = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
                 {
                     renderer.WriteToStream(matrix, file);
                 }
 			}
-			else
-			{
+            else if (saveFileDialog.FileName.EndsWith("svg"))
+            {
+                BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
+
+                // Initialize the EPS renderer
+                var renderer = new SVGRenderer(
+                    new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
+                    new EPSFormColor(Color.FromArgb(150, 200, 200, 210)), new EPSFormColor(Color.FromArgb(200, 255, 155, 0)));
+
+                using (var file = File.OpenWrite(saveFileDialog.FileName))
+                {
+                    renderer.WriteToStream(matrix, file, false);
+                }
+            }
+            else
+            {
 
                 //DrawingBrushRenderer dRender = new DrawingBrushRenderer(new FixedModuleSize(5, QuietZoneModules.Four));
                 //BitMatrix matrix = qrCodeGraphicControl1.GetQrMatrix();
@@ -75,7 +89,7 @@ namespace Gma.QrCodeNet.Demo
                 {
                     gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
                 }
-			}
+            }
            
 
         }
