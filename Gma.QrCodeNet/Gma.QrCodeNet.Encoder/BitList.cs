@@ -15,6 +15,12 @@ namespace Gma.QrCodeNet.Encoding
 			m_BitsSize = 0;
 			m_Array = new List<byte>(32);
 		}
+
+        internal BitList(IEnumerable<byte> byteArray)
+        {
+            m_BitsSize = byteArray.Count();
+            m_Array = byteArray.ToList();
+        }
 		
 		internal List<byte> List
 		{

@@ -34,6 +34,7 @@
             this.checkBoxArtistic = new System.Windows.Forms.CheckBox();
             this.qrCodeImgControl1 = new Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeImgControl();
             this.qrCodeGraphicControl1 = new Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeGraphicControl();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qrCodeImgControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.textBoxInput.Location = new System.Drawing.Point(12, 13);
             this.textBoxInput.Multiline = true;
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(443, 38);
+            this.textBoxInput.Size = new System.Drawing.Size(469, 38);
             this.textBoxInput.TabIndex = 0;
             this.textBoxInput.Text = "QrCode.Net";
             this.textBoxInput.TextChanged += new System.EventHandler(this.textBoxInput_TextChanged);
@@ -53,7 +54,7 @@
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Image = global::Gma.QrCodeNet.Demo.Properties.Resources.save;
-            this.buttonSave.Location = new System.Drawing.Point(461, 13);
+            this.buttonSave.Location = new System.Drawing.Point(487, 13);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(36, 38);
             this.buttonSave.TabIndex = 2;
@@ -93,11 +94,23 @@
             this.qrCodeGraphicControl1.Size = new System.Drawing.Size(442, 153);
             this.qrCodeGraphicControl1.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(426, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 38);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Byte Array Test";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 519);
+            this.ClientSize = new System.Drawing.Size(535, 519);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.qrCodeImgControl1);
             this.Controls.Add(this.qrCodeGraphicControl1);
             this.Controls.Add(this.checkBoxArtistic);
@@ -119,6 +132,7 @@
         private System.Windows.Forms.CheckBox checkBoxArtistic;
         private Encoding.Windows.Forms.QrCodeGraphicControl qrCodeGraphicControl1;
         private Encoding.Windows.Forms.QrCodeImgControl qrCodeImgControl1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

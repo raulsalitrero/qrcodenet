@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Gma.QrCodeNet.Encoding
 {
@@ -56,8 +57,39 @@ namespace Gma.QrCodeNet.Encoding
         		return false;
         	}
         }
-        
-        
-        
+
+        /// <summary>
+        /// Encode byte array content to QrCode matrix
+        /// </summary>
+        /// <exception cref="InputOutOfBoundaryException">
+        /// This exception for string content is null, empty or too large</exception>
+        public QrCode Encode(IEnumerable<byte> content)
+        {
+            if (content == null)
+            {
+                throw new InputOutOfBoundaryException("Input should not be empty or null");
+            }
+            else
+                return new QrCode(QRCodeEncode.Encode(content, ErrorCorrectionLevel));
+        }
+
+        /// <summary>
+        /// Try to encode content
+        /// </summary>
+        /// <returns>False if input content is empty, null or too large.</returns>
+        public bool TryEncode(IEnumerable<byte> content, out QrCode qrCode)
+        {
+            try
+            {
+                qrCode = this.Encode(content);
+                return true;
+            }
+            catch (InputOutOfBoundaryException)
+            {
+                qrCode = new QrCode();
+                return false;
+            }
+        }
+
     }
 }
