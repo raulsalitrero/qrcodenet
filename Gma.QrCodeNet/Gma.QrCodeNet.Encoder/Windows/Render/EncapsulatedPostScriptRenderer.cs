@@ -5,14 +5,24 @@ using System.Text;
 using System.IO;
 using System.Globalization;
 
+#if NETFX_CORE
+using Windows.UI;
+#else
+#endif
+
 namespace Gma.QrCodeNet.Encoding.Windows.Render
 {
 	public class EncapsulatedPostScriptRenderer
 	{
 		private ISizeCalculation m_iSize;
 
-		private EPSColor m_DarkColor;
-		private EPSColor m_LightColor;
+#if NETFX_CORE
+        private Color m_DarkColor;
+        private Color m_LightColor;
+#else
+        private EPSColor m_DarkColor;
+        private EPSColor m_LightColor;
+#endif
 
 		private EpsModuleDrawingTechnique m_DrawingTechnique;
 
@@ -23,9 +33,14 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
 		/// <param name="lightColor">LightColor used to draw Light modules and QuietZone of the QrCode.
 		/// Setting to a transparent color (A = 0) allows transparent light modules so the QR Code blends in the existing background.
 		/// In that case the existing background should remain light and rather uniform, and higher error correction levels are recommended.</param>
-		/// <param name="quietZoneModules"></param>
-		public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, EPSColor darkColor, EPSColor lightColor)
+        /// <param name="quietZoneModules"></param>
+#if NETFX_CORE
+        public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, Color darkColor, Color lightColor)
+        {
+#else
+        public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, EPSColor darkColor, EPSColor lightColor)
 		{
+#endif
 			m_iSize = iSize;
 			m_DarkColor = darkColor;
 			m_LightColor = lightColor;
@@ -192,8 +207,8 @@ q q translate";
 				LightColor.G == LightColor.B &&
 				DarkColor.R == DarkColor.G &&
 				DarkColor.G == DarkColor.B;
-			string strLightColor;
-			string strDarkColor;
+			string strLightColor = string.Empty;
+			string strDarkColor = string.Empty;
 			if (bGrayScale)
 			{
 				strLightColor = LightColor.R.ToString("x2");
@@ -256,9 +271,14 @@ restore showpage
 
 		/// <summary>
 		/// DarkColor used to draw Dark modules of the QrCode
-		/// </summary>
-		public EPSColor DarkColor
+        /// </summary>
+#if NETFX_CORE
+        public Color DarkColor
+        {
+#else
+        public EPSColor DarkColor
 		{
+#endif
 			set
 			{
 				m_DarkColor = value;
@@ -273,9 +293,14 @@ restore showpage
 		/// LightColor used to draw Light modules and QuietZone of the QrCode.
 		/// Setting to a transparent color (A = 0) allows transparent light modules so the QR Code blends in the existing background.
 		/// In that case the existing background should remain light and rather uniform, and higher error correction levels are recommended.
-		/// </summary>
-		public EPSColor LightColor
+        /// </summary>
+#if NETFX_CORE
+        public Color LightColor
+        {
+#else
+        public EPSColor LightColor
 		{
+#endif
 			set
 			{
 				m_LightColor = value;

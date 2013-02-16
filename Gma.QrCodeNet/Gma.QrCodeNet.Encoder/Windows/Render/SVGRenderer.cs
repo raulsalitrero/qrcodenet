@@ -4,17 +4,33 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
+#if NETFX_CORE
+using Windows.UI;
+#else
+#endif
+
 namespace Gma.QrCodeNet.Encoding.Windows.Render
 {
     public class SVGRenderer
     {
         private ISizeCalculation m_iSize;
 
+#if NETFX_CORE
+        private Color m_DarkColor;
+        private Color m_LightColor;
+#else
         private EPSColor m_DarkColor;
         private EPSColor m_LightColor;
+#endif
 
+#if NETFX_CORE
+        public SVGRenderer(ISizeCalculation isize, Color darkcolor, Color lightcolor)
+        {
+#else
         public SVGRenderer(ISizeCalculation isize, EPSColor darkcolor, EPSColor lightcolor)
         {
+#endif
+
             m_iSize = isize;
             m_DarkColor = darkcolor;
             m_LightColor = lightcolor;
@@ -91,7 +107,7 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
                     {
                         //Here will be first light module after sequence of dark module.
                         //Draw previews sequence of dark Module
-                        sb.AppendRec(new MatrixPoint(preX + offsetX, y+offSetY), new MatrixPoint(x - preX, 1));
+                        sb.AppendRec(new MatrixPoint(preX + offsetX, y + offSetY), new MatrixPoint(x - preX, 1));
                         preX = -1;
                     }
                 }

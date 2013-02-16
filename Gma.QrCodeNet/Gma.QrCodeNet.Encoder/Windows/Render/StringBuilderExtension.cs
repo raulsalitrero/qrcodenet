@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+#if NETFX_CORE
+using Windows.UI;
+#else
+#endif
+
 namespace Gma.QrCodeNet.Encoding.Windows.Render
 {
     internal static class StringBuilderExtension
@@ -14,8 +19,14 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
                 .Append("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
         }
 
+#if NETFX_CORE
+        internal static StringBuilder AppendSVGTag(this StringBuilder sb, MatrixPoint displaysize, MatrixPoint viewboxSize, Color background, Color fill)
+        {
+#else
         internal static StringBuilder AppendSVGTag(this StringBuilder sb, MatrixPoint displaysize, MatrixPoint viewboxSize, EPSColor background, EPSColor fill)
         {
+#endif
+        
 
             if (displaysize.X <= 0 || displaysize.Y <= 0)
                 return sb.Append(string.Format("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 {0} {1}\" viewport-fill=\"rgb({2}, {3}, {4})\" viewport-fill-opacity=\"{5}\" fill=\"rgb({6}, {7}, {8})\" fill-opacity=\"{9}\" {10}>",
@@ -67,8 +78,14 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
             return Math.Round((((double)alpha) / (double)255), 2);
         }
 
+#if NETFX_CORE
+        internal static string BackgroundStyle(Color color)
+        {
+#else
         internal static string BackgroundStyle(EPSColor color)
         {
+#endif
+        
             double alpha = ConvertAlpha(color.A);
             return string.Format("style=\"background-color:rgb({0},{1},{2});background-color:rgba({0},{1},{2},{3});\"",
                 color.R,

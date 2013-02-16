@@ -1,0 +1,16 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Gma.QrCode.Net.Encoding.WinRT.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:WinRT="using:Gma.QrCodeNet.Encoding.Windows.WinRT"
+    x:Class="Gma.QrCode.Net.Encoding.WinRT.Demo.MainPage"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+
+        <WinRT:QrCodeGeoControl HorizontalAlignment="Left" Height="545" Margin="389,100,0,0" VerticalAlignment="Top" Width="718" Text="Test" DarkBrush="#FF664444" LightBrush="#FFFBC5C5" Background="#FFF7E6E6"/>
+
+    </Grid>
+</Page>
