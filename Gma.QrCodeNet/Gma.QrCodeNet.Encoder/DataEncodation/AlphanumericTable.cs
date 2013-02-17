@@ -70,7 +70,6 @@ namespace Gma.QrCodeNet.Encoding.DataEncodation
 	        {
 	            throw new ArgumentOutOfRangeException(
                     "inputChar", 
-                    inputChar,
 	                "Not an alphanumeric character found. Only characters from table from chapter 8.4.3 P21 are supported in alphanumeric mode.");
 	        }
 		    return value;

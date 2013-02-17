@@ -63,7 +63,6 @@ namespace Gma.QrCodeNet.Encoding.DataEncodation
 			if(!eciSet.ContainsECIName(Encoding))
 			{
 				throw new ArgumentOutOfRangeException("Encoding", 
-				                                      Encoding, 
 				                                      "Current ECI table does not support this encoding. Please check ECISet class for more info");
 			}
 			

@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Windows;
+
+#if NETFX_CORE
 using Windows.Foundation;
 using Windows.UI.Xaml.Media;
+#else
+using System.Windows.Media;
+#endif
 
 namespace Gma.QrCodeNet.Encoding.Windows.Render
 {

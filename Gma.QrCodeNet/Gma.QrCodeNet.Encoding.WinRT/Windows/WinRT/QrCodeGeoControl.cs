@@ -1,12 +1,25 @@
 ﻿using Gma.QrCodeNet.Encoding.Windows.Render;
 using System.ComponentModel;
+
+
+#if NETFX_CORE
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+#else
+using System.Windows.Controls;
+using System.Windows;
+using System.Windows.Media;
+#endif
 
+#if NETFX_CORE
 namespace Gma.QrCodeNet.Encoding.Windows.WinRT
 {
+#else
+namespace Gma.QrCodeNet.Encoding.Windows.Silverlight
+{
+#endif
     public class QrCodeGeoControl : Control
     {
 
@@ -144,8 +157,13 @@ namespace Gma.QrCodeNet.Encoding.Windows.WinRT
             this.UpdatePadding();
         }
 
+#if NETFX_CORE
         protected override global::Windows.Foundation.Size ArrangeOverride(global::Windows.Foundation.Size finalSize)
         {
+#else
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+#endif
             double width = finalSize.Width < finalSize.Height ? finalSize.Width : finalSize.Height;
             double moduleSize = width / (m_width + 4);
             this.Padding = new Thickness(2 * moduleSize);
