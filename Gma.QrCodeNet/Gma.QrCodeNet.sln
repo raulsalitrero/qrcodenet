@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{6AE2EB7F-333D-461E-B806-DB342B92879C}"
 	ProjectSection(SolutionItems) = preProject
 		lib\nunit.framework.dll = lib\nunit.framework.dll
@@ -25,6 +25,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCodeNet.Encoding.Silverlight", "Gma.QrCodeNet.Encoding.Silverlight\Gma.QrCodeNet.Encoding.Silverlight.csproj", "{3BD605D9-B4F6-4FB9-80F6-A6829C49F485}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCode.Net.Silverlight.Demo", "Gma.QrCode.Net.Silverlight.Demo\Gma.QrCode.Net.Silverlight.Demo.csproj", "{FFF7B41A-F3F8-4C7B-8A73-195C148BB236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCodeNet.Web.Demo", "Gma.QrCodeNet.Web.Demo\Gma.QrCodeNet.Web.Demo.csproj", "{4291EB87-8EBD-4022-A95E-D5068B34FEA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -188,14 +190,29 @@ Global
 		{FFF7B41A-F3F8-4C7B-8A73-195C148BB236}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FFF7B41A-F3F8-4C7B-8A73-195C148BB236}.Release|x64.ActiveCfg = Release|Any CPU
 		{FFF7B41A-F3F8-4C7B-8A73-195C148BB236}.Release|x86.ActiveCfg = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|x64.ActiveCfg = Release|Any CPU
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{99B565A7-5120-4E25-B603-DE9CE5B123E0} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
 		{1D5B21D6-99C2-4A79-A12A-29E8646CC538} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
 		{8A5C0B8E-480C-45B1-B961-8F21F994BD9A} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
+		{99B565A7-5120-4E25-B603-DE9CE5B123E0} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
 		{FFF7B41A-F3F8-4C7B-8A73-195C148BB236} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
+		{4291EB87-8EBD-4022-A95E-D5068B34FEA6} = {DC1470FE-5751-4582-B57E-F0433AE3CDB1}
 	EndGlobalSection
 EndGlobal
