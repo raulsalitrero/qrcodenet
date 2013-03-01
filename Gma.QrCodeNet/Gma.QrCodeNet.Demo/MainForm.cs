@@ -10,13 +10,17 @@ namespace Gma.QrCodeNet.Demo
 {
     public partial class MainForm : Form
     {
+        private Color _lightModule = Color.FromArgb(220, 100, 203, 50);
+        private Color _darkModule = Color.FromArgb(170, 20, 250, 220);
+
         public MainForm()
         {
             InitializeComponent();
-            qrCodeImgControl1.DarkBrush = Brushes.Yellow;
-            qrCodeImgControl1.LightBrush = Brushes.MediumVioletRed;
+            qrCodeImgControl1.DarkBrush = new SolidBrush(_darkModule);
+            qrCodeImgControl1.LightBrush = new SolidBrush(_lightModule);
             qrCodeGraphicControl1.Text = textBoxInput.Text;
             qrCodeImgControl1.Text = textBoxInput.Text;
+            ContrastCal();
         }
 
         private void textBoxInput_TextChanged(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace Gma.QrCodeNet.Demo
                 // Initialize the EPS renderer
                 var renderer = new EncapsulatedPostScriptRenderer(
                     new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                    new EPSFormColor(Color.Black), new EPSFormColor(Color.White));
+                    new FormColor(Color.Black), new FormColor(Color.White));
 
                 using (var file = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
                 {
@@ -59,7 +63,7 @@ namespace Gma.QrCodeNet.Demo
                 // Initialize the EPS renderer
                 var renderer = new SVGRenderer(
                     new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                    new EPSFormColor(Color.FromArgb(150, 200, 200, 210)), new EPSFormColor(Color.FromArgb(200, 255, 155, 0)));
+                    new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
 
                 using (var file = File.OpenWrite(saveFileDialog.FileName))
                 {
@@ -128,7 +132,7 @@ namespace Gma.QrCodeNet.Demo
                 // Initialize the EPS renderer
                 var renderer = new EncapsulatedPostScriptRenderer(
                     new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                    new EPSFormColor(Color.Black), new EPSFormColor(Color.White));
+                    new FormColor(Color.Black), new FormColor(Color.White));
 
                 using (var file = File.Open(saveFileDialog.FileName, FileMode.CreateNew))
                 {
@@ -142,7 +146,7 @@ namespace Gma.QrCodeNet.Demo
                 // Initialize the EPS renderer
                 var renderer = new SVGRenderer(
                     new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                    new EPSFormColor(Color.FromArgb(150, 200, 200, 210)), new EPSFormColor(Color.FromArgb(200, 255, 155, 0)));
+                    new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
 
                 using (var file = File.OpenWrite(saveFileDialog.FileName))
                 {
@@ -158,6 +162,46 @@ namespace Gma.QrCodeNet.Demo
                     gRender.WriteToStream(matrix, ImageFormat.Png, stream, new Point(600, 600));
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ColorDialog colordlg = new ColorDialog();
+            SolidBrush brush = qrCodeImgControl1.LightBrush as SolidBrush;
+            colordlg.Color = brush == null ? _lightModule : brush.Color;
+
+            if (colordlg.ShowDialog() == DialogResult.OK)
+            {
+                qrCodeImgControl1.LightBrush = new SolidBrush(colordlg.Color);
+                _lightModule = colordlg.Color;
+                ContrastCal();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ColorDialog colordlg = new ColorDialog();
+            SolidBrush brush = qrCodeImgControl1.DarkBrush as SolidBrush;
+            colordlg.Color = brush == null ? _darkModule : brush.Color;
+
+            if (colordlg.ShowDialog() == DialogResult.OK)
+            {
+                qrCodeImgControl1.DarkBrush = new SolidBrush(colordlg.Color);
+                _darkModule = colordlg.Color;
+                ContrastCal();
+            }
+        }
+
+        private void ContrastCal()
+        {
+            SolidBrush darkmoduleBrush = qrCodeImgControl1.DarkBrush as SolidBrush;
+            SolidBrush lightmoduleBrush = qrCodeImgControl1.LightBrush as SolidBrush;
+            Color darkmodule = darkmoduleBrush == null ? _darkModule : darkmoduleBrush.Color;
+            Color lightmodule = lightmoduleBrush == null ? _lightModule : lightmoduleBrush.Color;
+
+            Contrast ctrast = ColorContrast.GetContrast(new FormColor(lightmodule), new FormColor(darkmodule));
+
+            label1.Text = ctrast.Ratio.ToString();
         }
     }
 }

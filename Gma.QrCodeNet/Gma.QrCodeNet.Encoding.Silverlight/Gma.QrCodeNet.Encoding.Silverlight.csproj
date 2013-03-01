@@ -291,6 +291,9 @@
     <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\VersionTable.cs">
       <Link>Versions\VersionTable.cs</Link>
     </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\ColorContrast.cs">
+      <Link>Windows\Render\ColorContrast.cs</Link>
+    </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\QuietZoneModules.cs">
       <Link>Windows\Render\QuietZoneModules.cs</Link>
     </Compile>

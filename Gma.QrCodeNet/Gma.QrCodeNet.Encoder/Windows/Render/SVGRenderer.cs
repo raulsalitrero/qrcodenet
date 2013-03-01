@@ -19,15 +19,15 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         private Color m_DarkColor;
         private Color m_LightColor;
 #else
-        private EPSColor m_DarkColor;
-        private EPSColor m_LightColor;
+        private GColor m_DarkColor;
+        private GColor m_LightColor;
 #endif
 
 #if NETFX_CORE
         public SVGRenderer(ISizeCalculation isize, Color darkcolor, Color lightcolor)
         {
 #else
-        public SVGRenderer(ISizeCalculation isize, EPSColor darkcolor, EPSColor lightcolor)
+        public SVGRenderer(ISizeCalculation isize, GColor darkcolor, GColor lightcolor)
         {
 #endif
 

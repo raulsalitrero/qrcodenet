@@ -139,9 +139,10 @@
     <Compile Include="Windows\Forms\QrCodeImgControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Windows\Render\EPSColor.cs" />
-    <Compile Include="Windows\Render\EPSFormColor.cs" />
-    <Compile Include="Windows\Render\EPSMediaColor.cs" />
+    <Compile Include="Windows\Render\ColorContrast.cs" />
+    <Compile Include="Windows\Render\GColor.cs" />
+    <Compile Include="Windows\Render\FormColor.cs" />
+    <Compile Include="Windows\Render\MediaColor.cs" />
     <Compile Include="Windows\Render\StringBuilderExtension.cs" />
     <Compile Include="Windows\Render\SVGRenderer.cs" />
     <Compile Include="Windows\Render\WriteableBitmapRenderer.cs" />

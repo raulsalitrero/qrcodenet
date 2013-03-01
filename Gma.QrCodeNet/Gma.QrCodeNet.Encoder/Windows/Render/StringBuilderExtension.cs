@@ -23,7 +23,7 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         internal static StringBuilder AppendSVGTag(this StringBuilder sb, MatrixPoint displaysize, MatrixPoint viewboxSize, Color background, Color fill)
         {
 #else
-        internal static StringBuilder AppendSVGTag(this StringBuilder sb, MatrixPoint displaysize, MatrixPoint viewboxSize, EPSColor background, EPSColor fill)
+        internal static StringBuilder AppendSVGTag(this StringBuilder sb, MatrixPoint displaysize, MatrixPoint viewboxSize, GColor background, GColor fill)
         {
 #endif
         
@@ -82,7 +82,7 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         internal static string BackgroundStyle(Color color)
         {
 #else
-        internal static string BackgroundStyle(EPSColor color)
+        internal static string BackgroundStyle(GColor color)
         {
 #endif
         
