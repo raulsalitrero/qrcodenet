@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCode.Net.Silverlight.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCodeNet.Web.Demo", "Gma.QrCodeNet.Web.Demo\Gma.QrCodeNet.Web.Demo.csproj", "{4291EB87-8EBD-4022-A95E-D5068B34FEA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gma.QrCodeNet.Encoding.Net35", "Gma.QrCodeNet.Encoding.Net35\Gma.QrCodeNet.Encoding.Net35.csproj", "{B1815C00-695E-493E-B730-7D505247EF71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -200,6 +202,20 @@ Global
 		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|x64.ActiveCfg = Release|Any CPU
 		{4291EB87-8EBD-4022-A95E-D5068B34FEA6}.Release|x86.ActiveCfg = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|x64.ActiveCfg = Release|Any CPU
+		{B1815C00-695E-493E-B730-7D505247EF71}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
