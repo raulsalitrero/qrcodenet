@@ -20,8 +20,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         private Color m_DarkColor;
         private Color m_LightColor;
 #else
-        private EPSColor m_DarkColor;
-        private EPSColor m_LightColor;
+        private GColor m_DarkColor;
+        private GColor m_LightColor;
 #endif
 
 		private EpsModuleDrawingTechnique m_DrawingTechnique;
@@ -38,7 +38,7 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, Color darkColor, Color lightColor)
         {
 #else
-        public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, EPSColor darkColor, EPSColor lightColor)
+        public EncapsulatedPostScriptRenderer(ISizeCalculation iSize, GColor darkColor, GColor lightColor)
 		{
 #endif
 			m_iSize = iSize;
@@ -276,7 +276,7 @@ restore showpage
         public Color DarkColor
         {
 #else
-        public EPSColor DarkColor
+        public GColor DarkColor
 		{
 #endif
 			set
@@ -298,7 +298,7 @@ restore showpage
         public Color LightColor
         {
 #else
-        public EPSColor LightColor
+        public GColor LightColor
 		{
 #endif
 			set

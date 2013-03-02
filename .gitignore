@@ -15,6 +15,7 @@ Gma.QrCodeNet/Gma.QrCodeNet.Encoding.Net45/obj/
 Gma.QrCodeNet/Gma.QrCodeNet.Encoding.Silverlight/bin/
 Gma.QrCodeNet/Gma.QrCodeNet.Encoding.Silverlight/obj/
 Gma.QrCodeNet/Gma.QrCode.Net.Silverlight.Demo/bin/
+<<<<<<< HEAD
 Gma.QrCodeNet/Gma.QrCode.Net.Silverlight.Demo/obj/
 /Gma.QrCodeNet/Gma.QrCodeNet.sln.DotSettings.user
 
@@ -23,3 +24,8 @@ Gma.QrCodeNet/Gma.QrCode.Net.Silverlight.Demo/obj/
 /Gma.QrCodeNet/Gma.QrCodeNet.suo
 /Gma.QrCodeNet/Gma.QrCodeNet.Web.Demo/obj
 /Gma.QrCodeNet/Gma.QrCodeNet.Web.Demo/bin
+=======
+Gma.QrCodeNet/Gma.QrCode.Net.Silverlight.Demo/obj/
+Gma.QrCodeNet/Gma.QrCodeNet.ProjectSite
+Gma.QrCodeNet/packages
+>>>>>>> origin/Color-Contrast

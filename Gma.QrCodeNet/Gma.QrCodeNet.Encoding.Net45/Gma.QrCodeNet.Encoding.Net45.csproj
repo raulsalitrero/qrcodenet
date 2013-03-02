@@ -282,6 +282,9 @@
       <Link>Windows\Forms\QrCodeImgControl.cs</Link>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\ColorContrast.cs">
+      <Link>Windows\Render\ColorContrast.cs</Link>
+    </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\DrawingBrushRenderer.cs">
       <Link>Windows\Render\DrawingBrushRenderer.cs</Link>
     </Compile>
@@ -291,20 +294,17 @@
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\EncapsulatedPostScriptRenderer.cs">
       <Link>Windows\Render\EncapsulatedPostScriptRenderer.cs</Link>
     </Compile>
-    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\EPSColor.cs">
-      <Link>Windows\Render\EPSColor.cs</Link>
-    </Compile>
-    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\EPSFormColor.cs">
-      <Link>Windows\Render\EPSFormColor.cs</Link>
-    </Compile>
-    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\EPSMediaColor.cs">
-      <Link>Windows\Render\EPSMediaColor.cs</Link>
-    </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\FixedCodeSize.cs">
       <Link>Windows\Render\FixedCodeSize.cs</Link>
     </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\FixedModuleSize.cs">
       <Link>Windows\Render\FixedModuleSize.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\FormColor.cs">
+      <Link>Windows\Render\FormColor.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\GColor.cs">
+      <Link>Windows\Render\GColor.cs</Link>
     </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\GeometryExtensions.cs">
       <Link>Windows\Render\GeometryExtensions.cs</Link>
@@ -320,6 +320,9 @@
     </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\ISizeCalculation.cs">
       <Link>Windows\Render\ISizeCalculation.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\MediaColor.cs">
+      <Link>Windows\Render\MediaColor.cs</Link>
     </Compile>
     <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\QuietZoneModules.cs">
       <Link>Windows\Render\QuietZoneModules.cs</Link>
