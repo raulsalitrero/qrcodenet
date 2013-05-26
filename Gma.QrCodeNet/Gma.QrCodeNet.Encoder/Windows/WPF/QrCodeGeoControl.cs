@@ -15,6 +15,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.WPF
 
         public event EventHandler QrMatrixChanged;
 
+      
+
         #region LightBrush
         public static readonly DependencyProperty LightBrushProperty =
             DependencyProperty.Register("LightBrush", typeof(Brush), typeof(QrCodeGeoControl), new UIPropertyMetadata(Brushes.White));

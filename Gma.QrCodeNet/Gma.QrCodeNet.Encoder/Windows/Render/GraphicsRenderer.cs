@@ -173,7 +173,6 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
 
         /// <summary>
         /// LightBrush for drawing Light module and QuietZone of QrCode
-
         /// </summary>
         public Brush LightBrush
         {
