@@ -29,7 +29,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
         
 
             if (displaysize.X <= 0 || displaysize.Y <= 0)
-                return sb.Append(string.Format("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 {0} {1}\" viewport-fill=\"rgb({2}, {3}, {4})\" viewport-fill-opacity=\"{5}\" fill=\"rgb({6}, {7}, {8})\" fill-opacity=\"{9}\" {10}>",
+                return sb.Append(string.Format(CultureInfo.InvariantCulture.NumberFormat,
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 {0} {1}\" viewport-fill=\"rgb({2}, {3}, {4})\" viewport-fill-opacity=\"{5}\" fill=\"rgb({6}, {7}, {8})\" fill-opacity=\"{9}\" {10}>",
                     viewboxSize.X,
                     viewboxSize.Y,
                     background.R,
@@ -43,7 +44,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
                     BackgroundStyle(background)
                     ));
             else
-                return sb.Append(string.Format("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 {0} {1}\" viewport-fill=\"rgb({2}, {3}, {4})\" viewport-fill-opacity=\"{5}\" fill=\"rgb({6}, {7}, {8})\" fill-opacity=\"{9}\" {10} width=\"{11}\" height=\"{12}\">",
+                return sb.Append(string.Format(CultureInfo.InvariantCulture.NumberFormat,
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.2\" baseProfile=\"tiny\" viewBox=\"0 0 {0} {1}\" viewport-fill=\"rgb({2}, {3}, {4})\" viewport-fill-opacity=\"{5}\" fill=\"rgb({6}, {7}, {8})\" fill-opacity=\"{9}\" {10} width=\"{11}\" height=\"{12}\">",
                     viewboxSize.X,
                     viewboxSize.Y,
                     background.R,
@@ -61,7 +63,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
 
         internal static StringBuilder AppendRec(this StringBuilder sb, MatrixPoint position, MatrixPoint size)
         {
-            return sb.Append(string.Format("<rect x=\"{0}\" y=\"{1}\" width=\"{2}\" height=\"{3}\"/>",
+            return sb.Append(string.Format(CultureInfo.InvariantCulture.NumberFormat,
+                "<rect x=\"{0}\" y=\"{1}\" width=\"{2}\" height=\"{3}\"/>",
                 position.X,
                 position.Y,
                 size.X,
@@ -87,7 +90,8 @@ namespace Gma.QrCodeNet.Encoding.Windows.Render
 #endif
         
             double alpha = ConvertAlpha(color.A);
-            return string.Format("style=\"background-color:rgb({0},{1},{2});background-color:rgba({0},{1},{2},{3});\"",
+            return string.Format(CultureInfo.InvariantCulture.NumberFormat,
+                "style=\"background-color:rgb({0},{1},{2});background-color:rgba({0},{1},{2},{3});\"",
                 color.R,
                 color.G,
                 color.B,
