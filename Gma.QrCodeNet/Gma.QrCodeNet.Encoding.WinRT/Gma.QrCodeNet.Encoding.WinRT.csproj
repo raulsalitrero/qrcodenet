@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95144CF3-5D95-4779-8BC8-68679538AAB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gma.QrCodeNet.Encoding</RootNamespace>
+    <AssemblyName>Gma.QrCodeNet.Encoding</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>bin\ARM\Release\Gma.QrCodeNet.Encoding.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\nuget\lib\netcore45\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008, 1591,1592,1573,1571,1570,1572</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>..\nuget\lib\netcore45\Gma.QrCodeNet.Encoding.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\BitList.cs">
+      <Link>BitList.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\BitMatrix.cs">
+      <Link>BitMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\common\BitListExtensions.cs">
+      <Link>common\BitListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\common\ByteMatrix.cs">
+      <Link>common\ByteMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\common\ByteMatrixExtensions.cs">
+      <Link>common\ByteMatrixExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\AlphanumericEncoder.cs">
+      <Link>DataEncodation\AlphanumericEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\AlphanumericTable.cs">
+      <Link>DataEncodation\AlphanumericTable.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\CharCountIndicatorTable.cs">
+      <Link>DataEncodation\CharCountIndicatorTable.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\DataEncode.cs">
+      <Link>DataEncodation\DataEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\ECISet.cs">
+      <Link>DataEncodation\ECISet.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\EightBitByteEncoder.cs">
+      <Link>DataEncodation\EightBitByteEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\EncodationStruct.cs">
+      <Link>DataEncodation\EncodationStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\EncoderBase.cs">
+      <Link>DataEncodation\EncoderBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\InputRecognition\InputRecognise.cs">
+      <Link>DataEncodation\InputRecognition\InputRecognise.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\InputRecognition\ModeEncodeCheck.cs">
+      <Link>DataEncodation\InputRecognition\ModeEncodeCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\InputRecognition\RecognitionStruct.cs">
+      <Link>DataEncodation\InputRecognition\RecognitionStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\KanjiEncoder.cs">
+      <Link>DataEncodation\KanjiEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\Mode.cs">
+      <Link>DataEncodation\Mode.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\DataEncodation\NumericEncoder.cs">
+      <Link>DataEncodation\NumericEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\EncodingRegion\BCHCalculator.cs">
+      <Link>EncodingRegion\BCHCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\EncodingRegion\Codeword.cs">
+      <Link>EncodingRegion\Codeword.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\EncodingRegion\FormatInformation.cs">
+      <Link>EncodingRegion\FormatInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\EncodingRegion\VersionInformation.cs">
+      <Link>EncodingRegion\VersionInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ErrorCorrectionLevel.cs">
+      <Link>ErrorCorrectionLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ErrorCorrection\ECGenerator.cs">
+      <Link>ErrorCorrection\ECGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\MaskPatternType.cs">
+      <Link>Masking\MaskPatternType.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\MatrixExtensions.cs">
+      <Link>Masking\MatrixExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\NullPattern.cs">
+      <Link>Masking\NullPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern.cs">
+      <Link>Masking\Pattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern0.cs">
+      <Link>Masking\Pattern0.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern1.cs">
+      <Link>Masking\Pattern1.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern2.cs">
+      <Link>Masking\Pattern2.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern3.cs">
+      <Link>Masking\Pattern3.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern4.cs">
+      <Link>Masking\Pattern4.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern5.cs">
+      <Link>Masking\Pattern5.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern6.cs">
+      <Link>Masking\Pattern6.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Pattern7.cs">
+      <Link>Masking\Pattern7.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\PatternFactory.cs">
+      <Link>Masking\PatternFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\MatrixScoreCalculator.cs">
+      <Link>Masking\Scoring\MatrixScoreCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\Penalty.cs">
+      <Link>Masking\Scoring\Penalty.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\Penalty1.cs">
+      <Link>Masking\Scoring\Penalty1.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\Penalty2.cs">
+      <Link>Masking\Scoring\Penalty2.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\Penalty3.cs">
+      <Link>Masking\Scoring\Penalty3.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\Penalty4.cs">
+      <Link>Masking\Scoring\Penalty4.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\PenaltyFactory.cs">
+      <Link>Masking\Scoring\PenaltyFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Masking\Scoring\PenaltyRules.cs">
+      <Link>Masking\Scoring\PenaltyRules.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\MatrixPoint.cs">
+      <Link>MatrixPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\MatrixRectangle.cs">
+      <Link>MatrixRectangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\MatrixSize.cs">
+      <Link>MatrixSize.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\MatrixStatus.cs">
+      <Link>MatrixStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\PositioninngPatternBuilder.cs">
+      <Link>Positioning\PositioninngPatternBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\Stencils\AlignmentPattern.cs">
+      <Link>Positioning\Stencils\AlignmentPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\Stencils\DarkDotAtLeftBottom.cs">
+      <Link>Positioning\Stencils\DarkDotAtLeftBottom.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\Stencils\PatternStencilBase.cs">
+      <Link>Positioning\Stencils\PatternStencilBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\Stencils\PositionDetectionPattern.cs">
+      <Link>Positioning\Stencils\PositionDetectionPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\Stencils\TimingPattern.cs">
+      <Link>Positioning\Stencils\TimingPattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Positioning\TriStateMatrixExtensions.cs">
+      <Link>Positioning\TriStateMatrixExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\QrCode.cs">
+      <Link>QrCode.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\QRCodeConstantVariable.cs">
+      <Link>QRCodeConstantVariable.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\QRCodeEncode.cs">
+      <Link>QRCodeEncode.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\QrEncoder.cs">
+      <Link>QrEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ReedSolomon\GaloisField256.cs">
+      <Link>ReedSolomon\GaloisField256.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ReedSolomon\GeneratorPolynomial.cs">
+      <Link>ReedSolomon\GeneratorPolynomial.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ReedSolomon\PolyDivideStruct.cs">
+      <Link>ReedSolomon\PolyDivideStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ReedSolomon\Polynomial.cs">
+      <Link>ReedSolomon\Polynomial.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\ReedSolomon\ReedSolomonEncoder.cs">
+      <Link>ReedSolomon\ReedSolomonEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\SquareBitMatrix.cs">
+      <Link>SquareBitMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\StateMatrix.cs">
+      <Link>StateMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Terminate\Terminator.cs">
+      <Link>Terminate\Terminator.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\TriStateMatrix.cs">
+      <Link>TriStateMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\VersionDetail.cs">
+      <Link>VersionDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\ErrorCorrectionBlock.cs">
+      <Link>Versions\ErrorCorrectionBlock.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\ErrorCorrectionBlocks.cs">
+      <Link>Versions\ErrorCorrectionBlocks.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\InputOutOfBoundaryException.cs">
+      <Link>Versions\InputOutOfBoundaryException.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\QRCodeVersion.cs">
+      <Link>Versions\QRCodeVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\VersionControl.cs">
+      <Link>Versions\VersionControl.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\VersionControlStruct.cs">
+      <Link>Versions\VersionControlStruct.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Versions\VersionTable.cs">
+      <Link>Versions\VersionTable.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\ColorContrast.cs">
+      <Link>Windows\Render\ColorContrast.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\DrawingSize.cs">
+      <Link>Windows\Render\DrawingSize.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\EncapsulatedPostScriptRenderer.cs">
+      <Link>Windows\Render\EncapsulatedPostScriptRenderer.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\ISizeCalculation.cs">
+      <Link>Windows\Render\ISizeCalculation.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\QuietZoneModules.cs">
+      <Link>Windows\Render\QuietZoneModules.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\StringBuilderExtension.cs">
+      <Link>Windows\Render\StringBuilderExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\Gma.QrCodeNet.Encoder\Windows\Render\SVGRenderer.cs">
+      <Link>Windows\Render\SVGRenderer.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Render\GeometryRenderer.cs" />
+    <Compile Include="Windows\WinRT\QrCodeGeoControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QrCodeNet.Key.pfx" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>QrCodeNet.Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
