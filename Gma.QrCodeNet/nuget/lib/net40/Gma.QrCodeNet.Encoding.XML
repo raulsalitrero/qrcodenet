@@ -964,7 +964,11 @@
             DarkBrush for drawing Dark module of QrCode
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.LightBrush" -->
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.LightBrush">
+            <summary>
+            LightBrush for drawing Light module and QuietZone of QrCode
+            </summary>
+        </member>
         <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.SizeCalculator">
             <summary>
             ISizeCalculation for the way to calculate QrCode's pixel size.

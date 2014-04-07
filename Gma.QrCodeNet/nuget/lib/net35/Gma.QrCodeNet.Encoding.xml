@@ -928,7 +928,11 @@
             DarkBrush for drawing Dark module of QrCode
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.LightBrush" -->
+        <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.LightBrush">
+            <summary>
+            LightBrush for drawing Light module and QuietZone of QrCode
+            </summary>
+        </member>
         <member name="P:Gma.QrCodeNet.Encoding.Windows.Render.GraphicsRenderer.SizeCalculator">
             <summary>
             ISizeCalculation for the way to calculate QrCode's pixel size.
@@ -1081,6 +1085,36 @@
         <member name="P:Gma.QrCodeNet.Encoding.Windows.WPF.QrCodeImgControl.IsFreezed">
             <summary>
             Return whether if class is freezed. 
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>
