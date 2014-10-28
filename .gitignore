@@ -24,3 +24,4 @@ Gma.QrCodeNet/Gma.QrCodeNet.Web.Demo/bin/
 Gma.QrCodeNet/Gma.QrCodeNet.Web.Demo/obj/
 Gma.QrCodeNet/nuget/*.nupkg
 QrCodeNet.Key.pfx
+/Gma.QrCodeNet/*.suo
